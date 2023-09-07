@@ -24,10 +24,9 @@ const Carousel = () => {
     const interval = setInterval(() => {
       handleNextClick();
     }, 3000); // Change slides every 3 seconds (adjust as needed)
-
-    return () => {
-      clearInterval(interval);
-    };
+     return () => {
+       clearInterval(interval);
+     };
   }, [currentIndex]);
 
   return (
