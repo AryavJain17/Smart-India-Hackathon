@@ -1,19 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter,Route,Routes } from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Product from "./components/product";
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import Navbar from "./components/Navbar";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-  <Routes>
-  <Route exact path='/' element={< App />}></Route>
-  <Route exact path='/Product' element={< Product />}></Route>
-                </Routes>
-  
-  
+    <Navbar />
+    <Routes>
+      <Route exact path="/" element={<App />}></Route>
+      <Route exact path="/Product" element={<Product />}></Route>
+    </Routes>
   </BrowserRouter>
 );
 
