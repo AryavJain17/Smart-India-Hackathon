@@ -7,6 +7,12 @@
   pointer-events: none;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
 .pro2{
   color: aliceblue;
 background-color: rgb(26 21 21);
@@ -34,13 +40,6 @@ font-weight: 500;
   /* font-family: cursive; */
   word-wrap: break-word;
 margin: 5rem 0  ;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {

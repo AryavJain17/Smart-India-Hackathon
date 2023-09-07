@@ -91,7 +91,7 @@ function Product() {
           {prod.map((e, i) => {
             return (
               <div key={i}>
-                <div className="max-w-sm rounded-2xl	 overflow-hidden shadow-lg text-white  card">
+                <div className="max-w-sm rounded-2xl	 overflow-hidden text-white  card">
                   <img
                     className="w-full border-white	border-2	"
                     src={e.img}
