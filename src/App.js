@@ -5,7 +5,7 @@ import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
 import Popular from './components/Popular';
 import Search from './components/Search';
-
+import About from './page/about';
 
 function App() {
   return (
@@ -24,7 +24,9 @@ function App() {
   <Popular />
   <Popular /> */}
   
+  
   </div>
+  <About/>
    </>
   );
 }
