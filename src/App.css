@@ -13,6 +13,35 @@
   }
 }
 
+.pro2{
+  color: aliceblue;
+background-color: rgb(26 21 21);
+padding:0.5rem 4rem;
+background: url("../public/imgs/k3.jpg") no-repeat ;
+background-size: cover ;
+height: 100vh;
+width: 100vw;
+}
+.quo1{ 
+  width: 40rem;
+  line-height: 4.3rem;
+  font-size: 1.9rem;
+  font-family: 'cursive';
+  word-wrap: break-word;
+margin: 5rem 0  ;
+text-align: center;
+font-weight: 500;
+}
+.quo2{ 
+  text-align: center;
+  width: 40rem;
+  line-height: 4.3rem;
+  font-size: 1rem;
+  /* font-family: cursive; */
+  word-wrap: break-word;
+margin: 5rem 0  ;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

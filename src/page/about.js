@@ -9,7 +9,7 @@ const About = () => {
   };
 
   return (
-    <div className="bg-gray-100 p-8 min-h-screen flex flex-col justify-center">
+    <div className="bg-gray-100   min-h-screen flex flex-col justify-center ">
       <div
         className="bg-gray-300 mb-8 p-4 "
         style={{ ...backgroundImageStyle, height: '650px',opacity:75 }} // Adjust the height as needed
@@ -21,7 +21,7 @@ const About = () => {
           </h5>
         </div>
       </div>
-      <div className="bg-gray-300 flex flex-row items-center mb-8 max-w-max p-4 mx-auto">
+      <div className="bg-gray-300 flex p-8 flex-row items-center mb-8 max-w-max p-4 mx-auto">
         <img
           src="/ODOPimage.jpg"
           alt="Kashmir Artisan"

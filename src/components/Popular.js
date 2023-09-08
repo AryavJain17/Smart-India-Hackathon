@@ -66,7 +66,7 @@ const Popular = () => {
   };
 
   return (
-    <div className="flex justify-center items-center space-x-4 my-10">
+    <div className="flex justify-center items-center space-x-4 my-10 ml-[80px]">
       <button onClick={handlePrev} className="carousel-button shadow-2xl shadow-black drop-shadow-2xl rounded-full px-5 py-3 ml-10 font-extrabold z-50 mb-10">
         &lt;
       </button>
