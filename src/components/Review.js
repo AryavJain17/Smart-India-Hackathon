@@ -27,13 +27,13 @@ const Review = () => {
       icons: [faStar,faStar,faStar,faStar],
     },
     {
-      image:
-        "https://us.123rf.com/450wm/pitinan/pitinan2305/pitinan230529358/204777723-young-smart-indian-businesswoman-smiling-face-standing-in-blur-background-of-busy-office.jpg?ver=6",
+      image: "https://us.123rf.com/450wm/pitinan/pitinan2305/pitinan230529358/204777723-young-smart-indian-businesswoman-smiling-face-standing-in-blur-background-of-busy-office.jpg?ver=6",
       person: "Ananya Singh",
-      heading: "Fantastic Initiative",
-      description: "What an amazing initiative! I received my order promptly, and the quality of the products exceeded my expectations. It's heartening to see a platform that not only offers fantastic handcrafted goods but also contributes to the betterment of the local economy and community. Keep up the excellent work, and I'll be spreading the word about your wonderful service!",
-      icons: [faStar, faStar,faStar,faStar],
+      heading: "Exceptional Experience!",
+      description: "I can't emphasize enough how exceptional my experience was with your platform. From the moment I placed my order to the delightful unboxing, everything exceeded my expectations. The quality of the products, combined with your commitment to uplifting the local economy and community, is truly commendable. Keep up the fantastic work, and I'll be sure to recommend your outstanding service to everyone I know!",
+      icons: [faStar, faStar, faStar, faStar],
     },
+    
   ];
 
   const handlePrevClick = () => {
@@ -58,7 +58,7 @@ const Review = () => {
   return (
     <div
       id="carouselExampleCrossfade"
-      className="relative my-10 w-[1200px] mx-auto drop-shadow-2xl shadow-lg rounded-xl shadow-black"
+      className="review-box relative my-10 w-[1200px] mx-auto drop-shadow-2xl shadow-lg rounded-xl shadow-black"
       data-te-carousel-init
       data-te-ride="carousel"
     >
@@ -79,11 +79,11 @@ const Review = () => {
       </button>
 
       {/* Carousel items */}
-      <div className="relative w-full overflow-hidden after:clear-both after:block after:content-[''] h-[450px] my-10">
+      <div className="main-review relative w-full overflow-hidden after:clear-both after:block after:content-[''] h-[450px] my-10 flex-row">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`relative float-left -mr-[100%] w-full opacity-0 transition-opacity duration-[300ms] ease-in-out motion-reduce:transition-none ${
+            className={`review1 relative float-left -mr-[100%] w-full opacity-0 transition-opacity duration-[300ms] ease-in-out motion-reduce:transition-none ${
               index === currentIndex ? "opacity-100 " : ""
             }`}
             data-te-carousel-fade
@@ -98,13 +98,13 @@ const Review = () => {
             <h1 className="text-3xl font-semibold text-center italic my-9">
               By ~ {slide.person}
             </h1>
-            <h1 className="text-center font-extrabold text-4xl mb-10">
+            <h1 className="review2 text-center font-extrabold text-4xl mb-10">
               "{slide.heading}"
             </h1>
             <p className="text-center mt-12 mb-5 text-lg font-medium mx-10">
               {slide.description}
             </p>
-            <div className="text-center">
+            <div className="review-icon text-center">
               {slide.icons.map((icon, iconIndex) => (
                 <FontAwesomeIcon
                   key={iconIndex}

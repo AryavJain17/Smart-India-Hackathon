@@ -6,12 +6,13 @@ import Popular from './Popular'
 import Info from './Info'
 import Category from './Category'
 import Review from './Review'
+import Footer from './Footer'
 
 const Home = () => {
   return (
     <>
   
-   
+   <div className='homepage'>
    <Cursor />
    <Search />
      <Carousel />
@@ -26,6 +27,8 @@ const Home = () => {
  <Info />
  <Category />
  <Review />
+ <Footer />
+ </div>
     </>
   )
 }

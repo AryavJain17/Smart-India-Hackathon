@@ -40,7 +40,7 @@ const Carousel = () => {
     
 
       {/* Carousel items */}
-      <div className="relative w-full overflow-hidden after:clear-both after:block after:content-[''] h-[650px] ">
+      <div className=" car-img relative w-full overflow-hidden after:clear-both after:block after:content-[''] h-[650px] ">
         {slides.map((slide, index) => (
           <div
             key={index}

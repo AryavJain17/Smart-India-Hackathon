@@ -51,21 +51,21 @@ const Category = () => {
   ];
 
   return (
-    <div>
+    <div className='col-main'>
       <h1 className='text-3xl font-bold  mt-6 text-center'>Our ever-expanding categories..</h1>
       
-      <div className='mt-10 flex justify-around '>
+      <div className='row1 mt-10 flex justify-around '>
         {cardData.map((card, index) => (
           <div className='text-center hover:drop-shadow-2xl hover:shadow-black cursor-pointer hover:underline' key={index}>
-            <FontAwesomeIcon icon={card.icon} className='text-[150px] text-teal-700' />
+            <FontAwesomeIcon icon={card.icon} className='icon text-[150px] text-teal-700' />
             <p className='mt-3 text-lg font-medium'>{card.iconname}</p>
           </div>
         ))}
       </div>
-      <div className='my-10 flex justify-around cursor-pointer'>
+      <div className='row2 my-10 flex justify-around'>
         {cardData1.map((card, index) => (
           <div className='text-center  hover:drop-shadow-2xl hover:shadow-black cursor-pointer hover:underline' key={index}>
-            <FontAwesomeIcon icon={card.icon} className='text-[150px] text-teal-700' />
+            <FontAwesomeIcon icon={card.icon} className='icon text-[150px] text-teal-700' />
             <p className='mt-3 text-lg font-medium'>{card.iconname}</p>
           </div>
         ))}

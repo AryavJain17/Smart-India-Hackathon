@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Popular = () => {
   const cardData = [
@@ -42,7 +42,7 @@ const Popular = () => {
         image:
           'https://5.imimg.com/data5/SELLER/Default/2022/3/NJ/FB/HD/148554576/plain-silk-fabric.jpg',
         description: 'from Pampore',
-        productName: 'Sil Clothing',
+        productName: 'Silk Clothing',
       },
       {
         image:
@@ -50,37 +50,74 @@ const Popular = () => {
         description: 'from Srinagar',
         productName: 'Designer Glassware',
       },
-    // Add more card data as needed
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(4); // Initially set to 4 for full screen
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Determine the number of visible cards based on screen width
+      if (window.innerWidth < 768) {
+        setVisibleCards(1); // Show 1 card when screen width is less than 468px
+      } else {
+        setVisibleCards(4); // Show 4 cards on larger screens
+      }
+    };
+
+    // Add a resize event listener
+    window.addEventListener('resize', handleResize);
+
+    // Initialize the number of visible cards
+    handleResize();
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 4) % cardData.length);
+    setCurrentIndex((prevIndex) => (prevIndex + visibleCards) % cardData.length);
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? cardData.length - 4 : prevIndex - 4
+      prevIndex === 0
+        ? cardData.length - visibleCards
+        : prevIndex - visibleCards
     );
   };
 
   return (
-    <div className="flex justify-center items-center space-x-4 my-10 ml-[80px]">
-      <button onClick={handlePrev} className="carousel-button shadow-2xl shadow-black drop-shadow-2xl rounded-full px-5 py-3 ml-10 font-extrabold z-50 mb-10">
+    <div className="popular flex justify-center items-center space-x-4 my-10 text-center w-full">
+      <button
+        onClick={handlePrev}
+        className="carousel-button shadow-2xl shadow-black drop-shadow-2xl rounded-full px-5 py-3 font-extrabold z-50 mb-10 ml-[30px]"
+      >
         &lt;
       </button>
       <div className="flex space-x-4">
-        {cardData.slice(currentIndex, currentIndex + 4).map((card, index) => (
-          <div key={index} className="relative -z-10 w-auto h-[200px] shadow-xl shadow-black rounded-xl mb-10">
-            <img src={card.image} alt={card.productName} className='rounded-xl h-[200px] w-80'/>
-           <h1 className='text-white absolute z-50 -mt-[170px] ml-10 font-bold text-3xl border-sm border-black' style={{ textShadow: '2px 2px #000' }}>{card.productName}</h1>
-           <p className='text-white absolute z-50 -mt-[130px] ml-10 font-medium text-md border-sm border-black' style={{ textShadow: '2px 2px #000' }}>{card.description}</p>
+        {cardData.slice(currentIndex, currentIndex + visibleCards).map((card, index) => (
+          <div
+            key={index}
+            className=" w-[200px] h-[300px] shadow-xl shadow-black rounded-xl mb-10 overflow-hidden"
+          >
+            <img
+              src={card.image}
+              alt={card.productName}
+              className="rounded-xl h-full w-full object-cover cursor-pointer"
+            />
+            <h1 className="text-white absolute z-30 -mt-[220px] ml-4 text-center justify-center font-bold text-3xl border-sm border-black overflow-hidden w-44" style={{ textShadow: '2px 2px #000' }}>{card.productName}</h1>
+            <p className="text-white absolute z-30 -mt-[130px] text-center font-medium text-md border-sm border-black overflow-hidden w-52" style={{ textShadow: '2px 2px #000' }}>{card.description}</p>
           </div>
         ))}
       </div>
-      <button onClick={handleNext} className="carousel-button shadow-2xl shadow-black drop-shadow-2xl rounded-full px-5 py-3 mr-10 font-extrabold mb-10" >
-         &gt;
+      <button
+        onClick={handleNext}
+        className="carousel-button shadow-2xl shadow-black drop-shadow-2xl rounded-full px-5 py-3 font-extrabold mb-10 mr-12"
+      >
+        &gt;
       </button>
     </div>
   );

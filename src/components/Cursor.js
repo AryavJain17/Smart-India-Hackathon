@@ -21,7 +21,7 @@ const Cursor = () => {
   return (
     <div className="content">
     <h1 className='text-white mt-10 absolute z-40 ml-44 mt-52 text-[70px] font-bold' style={{ textShadow: '2px 2px #000' }}>
-      Let's Bring<br/> <span className="auto-type"></span>
+     <p className='-mb-[100px]'> Let's Bring</p><br/> <span className="auto-type "></span>
     </h1>
   </div>
   
