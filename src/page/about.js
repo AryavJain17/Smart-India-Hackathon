@@ -1,4 +1,5 @@
 import React from 'react';
+import JobApplicationForm from '../components/job';
 
 const About = () => {
   const backgroundImageStyle = {
@@ -9,6 +10,8 @@ const About = () => {
   };
 
   return (
+    <>
+    
     <div className="bg-gray-100   min-h-screen flex flex-col justify-center ">
       <div
         className="bg-gray-300 mb-8 p-4 "
@@ -32,6 +35,8 @@ const About = () => {
         </p>
       </div>
     </div>
+    
+    </>
   );
 };
 
