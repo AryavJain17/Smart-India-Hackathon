@@ -1,5 +1,6 @@
 import React from 'react';
-import JobApplicationForm from '../components/job';
+
+import Navbar from './Navbar';
 
 const About = () => {
   const backgroundImageStyle = {
@@ -11,6 +12,7 @@ const About = () => {
 
   return (
     <>
+    <Navbar className="z-50"/>
     
     <div className="bg-gray-100   min-h-screen flex flex-col justify-center ">
       <div

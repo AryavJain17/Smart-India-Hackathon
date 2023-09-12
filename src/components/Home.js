@@ -6,10 +6,12 @@ import Popular from './Popular'
 import Info from './Info'
 import Category from './Category'
 import Review from './Review'
+import Navbar from './Navbar';
 
 const Home = () => {
   return (
     <>
+    <Navbar className="z-50"/>
   
    
    <Cursor />

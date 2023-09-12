@@ -43,7 +43,7 @@ function Product() {
   const windows=window.innerWidth>786;
   return (
     <div className="pro">
-      <Navbar />
+      <Navbar className="z-50"/>
       <div className="pro2">
         <div className="scr">
           <motion.div
