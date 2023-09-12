@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SellerNavbar from './sellernavbar';
+import axios from 'axios';
 
 const ProductUpload = () => {
   const [formData, setFormData] = useState({
@@ -8,35 +9,59 @@ const ProductUpload = () => {
     sellingPrice: '',
     productImage: null,
   });
+  
+useEffect(() => {
+  fetch("http://localhost:80/Api").then((y)=>{
+    return y.json()
+  })
+  .then((x)=>{
+setUploadedProducts(x);
+console.log(uploadedProducts);
+  })
+
+  
+}, [])
 
   const [uploadedProducts, setUploadedProducts] = useState([]); // New state for storing uploaded products
 
-  const handleChange = (e) => {
+  const handleChange = async(e) => {
     const { name, value, type } = e.target;
-
     // Handle file input separately
     if (type === 'file') {
-      const imageFile = e.target.files[0];
-      setFormData({ ...formData, productImage: imageFile });
+      const imageFile = e.target.files[0]; 
+      await setFormData({ ...formData, productImage: imageFile });
     } else {
-      setFormData({ ...formData, [name]: value });
+     await setFormData({ ...formData, [name]: value });
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Handle form submission (e.g., send data to a server)
     // You can use FormData to send the image file along with other data
-    const formDataToSend = new FormData();
-    formDataToSend.append('productName', formData.productName);
-    formDataToSend.append('description', formData.description);
-    formDataToSend.append('sellingPrice', formData.sellingPrice);
-    formDataToSend.append('productImage', formData.productImage);
+    // const formDataToSend = new FormData();
+    // formDataToSend.append('productName', formData.productName);
+    // formDataToSend.append('description', formData.description);
+    // formDataToSend.append('sellingPrice', formData.sellingPrice);
+    // formDataToSend.append('productImage', formData.productImage);
 
-    console.log('Form data to send:', formDataToSend);
+    console.log('Form data to send:', formData);
 
 
+await axios.post("http://localhost:80/upload",formData, {
+  headers: {
+    'Content-Type': 'multipart/form-data',
+  },
+});
+
+
+fetch('http://localhost:80/Api').then((y)=>{
+ return y.json()
+})
+.then((x)=>{
+  console.log(x);
+})
     setUploadedProducts([...uploadedProducts, formData]);
 
     // Clear the form fields

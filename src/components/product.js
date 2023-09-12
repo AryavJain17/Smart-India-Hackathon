@@ -6,25 +6,24 @@ function Product() {
   const [prod, setProd] = useState([]);
   const [scroll, setscroll] = useState(0);
 
-  const data = [
-    { name: "Spices", price: "$90", desc: "yeasdadsadasdsadasasdsh yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeaasdsadasdsadsadsah yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeasadsadsadsah yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah loremefkhsdbjhfbsdjncby  yeadsaaaaaaaaah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah yeahxzcmn bsdficef w fcehfbigxjf", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
-    { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
-  ];
+  // const data = [
+  //   { name: "Spices", price: "$90", desc: "yeasdadsadasdsadasasdsh yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeaasdsadasdsadsadsah yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeasadsadsadsah yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah loremefkhsdbjhfbsdjncby  yeadsaaaaaaaaah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah yeahxzcmn bsdficef w fcehfbigxjf", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
+  //   { name: "Spices", price: "$90", desc: "yeah yeah", img: "/imgs/k4.jpg" },
+  // ];
   useEffect(() => {
-    setProd(data);
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setscroll(1); // Change the background color to black
@@ -32,7 +31,13 @@ function Product() {
         setscroll(0); // Change it back to transparent
       }
     };
-
+    fetch('http://localhost:80/Api').then((y)=>{
+      return y.json()
+    })
+    .then((x)=>{
+  setProd(x);
+console.log(x);
+})
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -96,16 +101,16 @@ function Product() {
                 <div className="max-w-sm rounded-2xl	 overflow-hidden text-white  card">
                   <img
                     className="w-full border-white	border-2	"
-                    src={e.img}
+                    src={`/imgs/${e.filename}`}
                     alt="Sunset in the mountains"
                   />
                   <div className="px-6 py-4 text-center	">
                     <div className="font-bold text-xl mb-2"></div>
-                    <h1>{e.name}</h1>
+                    <h1>{e.productName}</h1>
                     <p className="text-white text-base">
-                      {e.desc}.
+                      {e.description}
                     </p>
-                    <h1>{e.price}</h1>
+                    <h1>{e.sellingPrice}</h1>
                   </div>
                   <div className="px-6 pt-4 pb-2">
                     <span className="inline-block btn bg-gray-100 rounded px-3 py-1 text-sm font-semibold text-black mr-2 mb-2">

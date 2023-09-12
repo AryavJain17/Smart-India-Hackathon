@@ -30,7 +30,7 @@ const SellerNavbar = () => {
             >
               Payment
             </a>
-            <Link to='/' type='button' className='text-black bg-blue-500 p-1/2 rounded'>customer's view</Link>
+            <Link to='/' type='button' className='text-black p-1 bg-blue-500 p-1/2 rounded'>customer's view</Link>
           </li>
         </ul>
       </div>
