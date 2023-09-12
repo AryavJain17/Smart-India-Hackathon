@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-<<<<<<< HEAD
-=======
 import { useAuth0 } from "@auth0/auth0-react";
->>>>>>> cdc627bc8e34fa7e1d6f4ca68caf87d87e95200a
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -60,11 +57,7 @@ const Navbar = () => {
               <Link to="/Blogs" className="block py-2 pl-3 pr-4 text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blog</Link>
             </li>
             <li>
-<<<<<<< HEAD
-              <Link to="/Contact" className="block py-2 pl-3 pr-4 text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</Link>
-=======
               <Link to="/Job" className="block py-2 pl-3 pr-4 text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Delivery job</Link>
->>>>>>> cdc627bc8e34fa7e1d6f4ca68caf87d87e95200a
             </li>
           </ul>
         </div>

@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Product from './components/product';
 import About from './page/about';
 import JobApplicationForm from './components/job';
-
+import './proct.css'
 
 function App() {
   

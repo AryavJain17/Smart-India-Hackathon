@@ -39,6 +39,8 @@ function Product() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const windows=window.innerWidth>786;
   return (
     <div className="pro">
       <Navbar />
@@ -63,7 +65,7 @@ function Product() {
                 Immerse yourself in the vibrant world of Kashmiri crafts, from
                 intricately woven Pashmina shawls to handcrafted wooden
                 artistry.
-                <motion.div
+                <motion.div className="quo3"
           style={{textAlign:"center" ,fontSize:"2rem" ,marginTop:"10px", animationFillMode:"backwards"}}
             animate={{ y: "25px" ,opacity: "1" }}
             initial={{ y: "-25px" ,opacity:0 }}
@@ -83,11 +85,11 @@ function Product() {
       </div>
 
       <motion.div
-        animate={{ opacity: scroll }}
-        initial={{ opacity: 0 }}
+        animate={{ opacity: windows?scroll:1 }}
+        initial={{ opacity:  windows?scroll:1 }}
         transition={{ duration: 1 }}
       >
-        <div className="grid grid-cols-3 grid-gap-7 px-10 mt-8 	">
+        <div className="grid grid-cols-3 grid-gap-7 px-10 mt-8 	cards">
           {prod.map((e, i) => {
             return (
               <div key={i}>
