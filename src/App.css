@@ -19,6 +19,7 @@ background-color: rgb(26 21 21);
 padding:0.5rem 4rem;
 background: url("../public/imgs/k3.jpg") no-repeat ;
 background-size: cover ;
+background-position-x: 98%;
 height: 100vh;
 width: 100vw;
 }

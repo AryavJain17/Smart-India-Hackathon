@@ -9,7 +9,7 @@ const Footer = () => {
         <p className=' text-gray-600 hover:text-black cursor-pointer hover:underline text-lg'>About</p>
         <p className=' text-gray-600 hover:text-black cursor-pointer hover:underline text-lg'>Products</p>
         <p className=' text-gray-600 hover:text-black cursor-pointer hover:underline text-lg'>Blog</p>
-        <p classssName=' text-gray-600 hover:text-black cursor-pointer hover:underline text-lg'>Contact Us</p>
+        <p className=' text-gray-600 hover:text-black cursor-pointer hover:underline text-lg'>Contact Us</p>
     </div>
     <div className='my-8'>
         <h1 className='text-2xl font-bold'>Products</h1>

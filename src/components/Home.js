@@ -6,13 +6,14 @@ import Popular from './Popular'
 import Info from './Info'
 import Category from './Category'
 import Review from './Review'
-import Footer from './Footer'
+import Navbar from './Navbar';
 
 const Home = () => {
   return (
     <>
+    <Navbar className="z-50"/>
   
-   <div className='homepage'>
+   
    <Cursor />
    <Search />
      <Carousel />
@@ -27,8 +28,6 @@ const Home = () => {
  <Info />
  <Category />
  <Review />
- <Footer />
- </div>
     </>
   )
 }

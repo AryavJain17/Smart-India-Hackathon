@@ -24,10 +24,9 @@ const Carousel = () => {
     const interval = setInterval(() => {
       handleNextClick();
     }, 3000); // Change slides every 3 seconds (adjust as needed)
-
-    return () => {
-      clearInterval(interval);
-    };
+     return () => {
+       clearInterval(interval);
+     };
   }, [currentIndex]);
 
   return (
@@ -40,7 +39,7 @@ const Carousel = () => {
     
 
       {/* Carousel items */}
-      <div className=" car-img relative w-full overflow-hidden after:clear-both after:block after:content-[''] h-[650px] ">
+      <div className="relative w-full overflow-hidden after:clear-both after:block after:content-[''] h-[650px] ">
         {slides.map((slide, index) => (
           <div
             key={index}
