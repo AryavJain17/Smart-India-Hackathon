@@ -1,0 +1,110 @@
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@import url('https://fonts.googleleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body, h1, h2, h3, p, div, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin:0;
+  padding: 0;
+  font-family: "Poppins";
+  background-color: white;
+  
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-container {
+  width: 1520px;
+  padding: 20px;
+  background-color: #e6e6fa; /* Background color for the carousel */
+  box-shadow: 1px 1px 3px 2px #ddd;
+  margin-bottom: 20px; /* Add spacing between the carousel and form */
+  height: 400px; /* Adjust the height as needed */
+}
+
+.carousel-inner .carousel-item {
+  object-fit: cover; /* Make sure the images cover the entire container */
+  height: 100%; /* Set the height of each carousel item to 100% */
+  background-size: cover; /* Make sure the background image covers the entire container */
+  background-position: center; /* Center the background image */
+  
+}
+
+.carousel-inner {
+  height: 360px; /* Set the height of the carousel to 100% of the viewport height */
+}
+
+#carouselExampleAutoplaying, .carousel-inner {
+  box-sizing: border-box;
+}
+
+.form-container{
+  display: block;
+  background-color: #e6e6fa;
+  box-shadow: 1px 1px 3px 2px #ddd;
+  margin: 40px auto;
+  max-width: 600px;
+  max-height: 700px;
+  padding: 20px;
+  justify-content: center; 
+  align-items: center;
+  
+}
+
+form input, textarea{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px auto;
+  padding: 7px;
+  font-family: "Poppins";
+}
+
+
+
